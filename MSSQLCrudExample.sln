@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSQLCrudExample", "MSSQLCrudExample\MSSQLCrudExample.csproj", "{508F4FEA-1937-42E2-889E-4D2BE1B25374}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSQLCrudExample.Tests", "MSSQLCrudExample.Tests\MSSQLCrudExample.Tests.csproj", "{B79BB79B-2894-4F03-B259-945E2F5325FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{508F4FEA-1937-42E2-889E-4D2BE1B25374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{508F4FEA-1937-42E2-889E-4D2BE1B25374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{508F4FEA-1937-42E2-889E-4D2BE1B25374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{508F4FEA-1937-42E2-889E-4D2BE1B25374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79BB79B-2894-4F03-B259-945E2F5325FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79BB79B-2894-4F03-B259-945E2F5325FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79BB79B-2894-4F03-B259-945E2F5325FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79BB79B-2894-4F03-B259-945E2F5325FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA34D1C8-C971-49A1-BF52-572E980650E8}
+	EndGlobalSection
+EndGlobal
