@@ -8,13 +8,13 @@ namespace MSSQLCrudExample.Tests
     public class TaskServiceTests
     {
         private readonly Mock<ITaskRepository> _mockRepo;
-        private readonly TaskServiсe _taskServise;
+        private readonly TaskService _taskService;
 
         public TaskServiceTests()
         {
 
             _mockRepo = new Mock<ITaskRepository>();
-            _taskServise = new TaskServiсe(_mockRepo.Object);
+            _taskService = new TaskService(_mockRepo.Object);
 
         }
 
@@ -25,7 +25,7 @@ namespace MSSQLCrudExample.Tests
             _mockRepo.Setup(repo => repo.GetAll()).Returns(new List<TaskItem>());
 
             // ACT
-            _taskServise.ShowAllTasks();
+            _taskService.ShowAllTasks();
 
             // ASSERT
             _mockRepo.Verify(repo => repo.GetAll(), Times.Once);
@@ -50,7 +50,7 @@ namespace MSSQLCrudExample.Tests
             _mockRepo.Setup(repo => repo.GetAll()).Returns(testTasks);
 
             // ACT
-            string output = CaptureConsoleOutput(() => _taskServise.ShowAllTasks());
+            string output = CaptureConsoleOutput(() => _taskService.ShowAllTasks());
 
             // ASSERT
             _mockRepo.Verify(repo => repo.GetAll(), Times.Once);
@@ -94,6 +94,19 @@ namespace MSSQLCrudExample.Tests
             Console.SetOut(stringWriter);
             action();
             return stringWriter.ToString();
+        }
+
+        [Fact]
+        public void CreateDB_And_Table_ShouldCallRepositoryCreateTable()
+        {
+            // ARRANGE
+            _mockRepo.Setup(repo => repo.CreateTable());
+
+            // ACT
+            _taskService.CreateDB_And_Table(); // ← ИСПРАВИЛ НА _taskService
+
+            // ASSERT
+            _mockRepo.Verify(repo => repo.CreateTable(), Times.Once);
         }
     }
 }

@@ -6,50 +6,18 @@ using MSSQLCrudExample.Models;
 
 namespace MSSQLCrudExample.Services
 {
-    public class TaskServiсe
+    public class TaskService
 
     {
         private readonly ITaskRepository _taskRepository;
-        public TaskServiсe(ITaskRepository taskRepository)
+        public TaskService(ITaskRepository taskRepository)
         {
             _taskRepository = taskRepository;
         }
 
-        public void Run()
+        public void CreateDB_And_Table()
         {
-            Console.WriteLine("=== СИСТЕМА УПРАВЛЕНИЯ ЗАДАЧАМИ ===");
             _taskRepository.CreateTable();
-
-            bool manager = true;
-
-            while (manager)
-            {
-                ShowMenu();
-                var command = Console.ReadLine();
-                switch (command)
-                {
-                    case "1": ShowAllTasks(); break;
-                    case "2": AddNewTask(); break;
-                    case "3": UpdateTaskStatus(); break;
-                    case "4": DeleteTask(); break;
-                    case "0": manager = false; Console.WriteLine("Спасибо что использовали наш сервис!"); break;
-                    default:
-                        Console.WriteLine();
-                        Console.WriteLine("Неверный выбор!"); break;
-                }
-            }
-        }
-
-        private void ShowMenu()
-        {
-            Console.WriteLine("\n=== МЕНЮ ===");
-            Console.WriteLine("1 - Показать все задачи");
-            Console.WriteLine("2 - Добавить задачу");
-            Console.WriteLine("3 - Обновить статус задачи");
-            Console.WriteLine("4 - Удалить задачу");
-            Console.WriteLine("0 - Выход");
-            Console.WriteLine();
-            Console.Write("Выберите действие: ");
         }
 
         public void ShowAllTasks()
